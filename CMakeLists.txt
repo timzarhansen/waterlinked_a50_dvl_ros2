@@ -36,7 +36,8 @@ include_directories(include)
 
 add_executable(dvl_node src/dvl_publisher_node_main.cpp src/dvl_publisher_node.cpp )
 ament_target_dependencies(dvl_node rclcpp std_msgs)
-target_link_libraries(dvl_node nlohmann_json::nlohmann_json)
+#rosidl_get_typesupport_target(dvl_node "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+target_link_libraries(dvl_node nlohmann_json::nlohmann_json )
 rosidl_target_interfaces(dvl_node
         ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
