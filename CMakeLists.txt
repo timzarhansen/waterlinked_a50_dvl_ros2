@@ -50,6 +50,13 @@ rosidl_target_interfaces(dvl_node
 
 
 
+install(TARGETS
+        dvl_node
+        DESTINATION lib/${PROJECT_NAME}
+)
+
+
+
 
 ament_export_dependencies(rosidl_default_runtime)
 

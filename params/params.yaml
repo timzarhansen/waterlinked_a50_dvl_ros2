@@ -1,6 +1,6 @@
 /dvl_publisher:
   ros__parameters:
-    IP: "192.168.2.52"
+    IP: "10.42.0.211"
     port: "16171"
     dvl_pos_topic_name: "position_estimate"
     dvl_vel_topic_name: "velocity_estimate"
