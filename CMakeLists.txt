@@ -54,9 +54,12 @@ install(TARGETS
         dvl_node
         DESTINATION lib/${PROJECT_NAME}
 )
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
 
-
-
+install(DIRECTORY
+        params
+        DESTINATION share/${PROJECT_NAME}
+)
 
 ament_export_dependencies(rosidl_default_runtime)
 

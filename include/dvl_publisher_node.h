@@ -28,7 +28,8 @@ public:
     DVLPublisher()
             : Node("dvl_publisher")
     {
-        this->declare_parameter<std::string>("IP", "192.168.2.52");
+
+        this->declare_parameter<std::string>("IP", "10.42.0.212");
         this->declare_parameter<std::string>("port", "16171");
         this->declare_parameter<std::string>("dvl_pos_topic_name", "position_estimate");
         this->declare_parameter<std::string>("dvl_vel_topic_name", "velocity_estimate");

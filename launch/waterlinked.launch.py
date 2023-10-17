@@ -12,13 +12,17 @@ def generate_launch_description():
     arg = SetEnvironmentVariable('RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED', '1')
     ld.add_action(arg)
 
-    parameters_file_path = Path(get_package_share_directory('waterlinked_a50'), 'param', 'params.yaml')
+    parameters_file_path = Path(get_package_share_directory('waterlinked_a50'), 'params', 'params.yaml')
     waterlinked_node = Node(
             package='waterlinked_a50',
             executable='dvl_node',
             name='dvl_node',
             output='screen',
-            parameters=[parameters_file_path],
+            parameters=[{"IP": "10.42.0.211"},
+                        {"port": "16171"},
+                        {"dvl_pos_topic_name": "position_estimate"},
+                        {"dvl_vel_topic_name": "velocity_estimate"}
+                        ],
             arguments=[]
             )
     ld.add_action(waterlinked_node)
